@@ -78,12 +78,19 @@ Dentro del menú de este último apartado podemos encontrar una librería que no
 Libreria onoff GPIO:
 **crear (pin, estado) ->** crea un objeto desde el que puede controlar los pines GPIO en la RaspberryPi. El parámetro de estado es una cadena e indica el tipo de entrada / salida del pin
 **readSync () ->** devuelve el valor leído por el pin 1/0
+
 **writeSync (valor) ->** envía en el pin GPIO el valor seleccionado 1/0
+
 **direction () ->** devuelve el estado del pin
+
 **setDirection (estado) ->** cambiar el estado del pin
+
 **activeLow () ->** devuelve el estado de la propiedad activeLow del pin
+
 **setActiveLow (valor) ->** cambiar la propiedad activeLow en el pin
+
 ## 5.Diagramas
+
 **Juego de luces**
 
 Para realizar pruebas de raspberry y Wyliodrin debemos contar con un generador de circuitos que nos permite exportar nuestros proyectos en formato SVG y XML. En este caso nuestro circuito será realizado con la plataforma Fritzing la cual es recomendada por Wyliodrin para subir nuestros esquemas.
