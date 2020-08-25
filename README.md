@@ -252,6 +252,66 @@ sleep(tiempo);
 Al ser una simulación en línea no es necesario la implementación de ningún software adicional, únicamente de contar con acceso a internet, en caso de realizar un diseño propio se debe crear primero un esquema en fritzing, el cual es un software portable para el diseño de circuitos electrónicos.
 
 ## 10.Aportacion
+
+Internet de las Cosas con Wyliodrin
+
+**1.** Primero dado a que la version .io es la unica en al cual podemos usar wyliodrin con una raspberry entonces se debe comprar o para realizar un test se puede solicitar una cuanta demo
+
+![](img/39.png)
+Descargar imagen de Wyliodrin, utilizando el software 7 zip para
+descomprimir despues escribir la imagen de Wyliodrin en la SD, utilizando el software Win32
+Disk Imager.
+
+Insertar la SD en la Raspberry Pi.
+
+Ingresar a la Wyliodrin Projects page y configurar. En las siguientes
+imágenes veremos el proceso completo de la creación y conexión de la
+raspberry a la interfaz de wyliodrin.
+En la primera imagen podemos ver la cuenta asociada al grupo de
+investigación TIGUM, y ver la conexión que tiene en el proceso de
+programación.
+
+![](img/40.png)
+
+**6.** Luego de ver el estado de la cuenta, empezamos a crear una carpeta
+general y definir el dispositivo que iremos a conectar en este caso la
+raspberry pi.
+
+![](img/41.png)
+
+Luego de esto debemos conectar y crear el proyecto, donde debemos
+seguir los pasos por defecto que nos da wyliodrin.
+
+![](img/42.png)
+
+Luego configuramos el lenguaje de programación, donde podemos
+escoger entre más de 20 lenguajes y la configuración de la conexión de
+la raspberry a internet
+
+![](img/43.png)
+
+Luego de que tengamos listo el programa en el cual vamos hacer actuar
+nuestra raspberry pi, por ejemplo: podemos observar en la imagen el
+programa final para tomar una foto donde a su derecha esta su
+traduccion a los demas idioma como son Python y Java para poder observar la foto debemos extraerla con una serie de
+comandos, para poderlo hacer debeos insertar una usb a la raspberry pi,
+la segundo que debemos hacer, es actuar en la Shell los siguientes
+comandos.
+
+![](img/44.png)
+
+Luego de que tengamos listo el programa debemos abrir el Shell o
+tablero, donde de inmediato tomara la foto y la guardara, pero no es
+posible observarla desde la interfaz de programación y en el Shell.
+
+![](img/45.png)
+
+Donde se verificara los puestos disponibles, luego se creara una carpeta
+y se copiara la foto en dicha carpeta
+
+![](img/46.png)
+
+
 ## 11.Conclusiones
 Una vez hemos concluido el proyecto, podemos establecer que se tiene claro el concepto de entrada y salida de datos ya que hemos realizado el proceso por completo, el cual funciona con éxito siendo de gran utilidad si se quisiera explicar de manera sencilla y clara los conceptos de entrada y salida mediante ejemplos.
 
