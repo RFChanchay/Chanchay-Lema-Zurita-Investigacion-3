@@ -6,7 +6,7 @@ General
  - Analizar la entrada y salida de datos de Raspberry Pi a través de la plataforma Wyliodrin
 ### Específicos
  - Aplicar conceptos de programación mediante la creación de un programa funcional que permita la entrada y salida de datos en una Raspberry pi
- - Implementar un la simulación de un circuito funcional con entrada y salida de datos mediante la plataforma Wyliodrin
+ - Implementar la simulación de un circuito funcional con entrada y salida de datos mediante la plataforma Wyliodrin
  - Comprender conceptos de entrada y de salida de datos.
 
 ## 3.Estado del Arte
@@ -73,7 +73,7 @@ Esta herramienta nos ofrece varios apartados para poder llevar a cabo nuestro pr
 
 Dentro del menú de este último apartado podemos encontrar una librería que nos va a servir de gran ayuda, la cual se encuentra localizada y explicada en la siguiente ubicación:
 
-[](img/13.png)
+[](img/12.png)
 
 Libreria onoff GPIO:
 **crear (pin, estado) ->** crea un objeto desde el que puede controlar los pines GPIO en la RaspberryPi. El parámetro de estado es una cadena e indica el tipo de entrada / salida del pin
@@ -88,11 +88,11 @@ Libreria onoff GPIO:
 
 Para realizar pruebas de raspberry y Wyliodrin debemos contar con un generador de circuitos que nos permite exportar nuestros proyectos en formato SVG y XML. En este caso nuestro circuito será realizado con la plataforma Fritzing la cual es recomendada por Wyliodrin para subir nuestros esquemas.
 
-![](img/4.png)
+![](img/13.png)
 
 El siguiente diagrama representa de manera visual y esquemática un juego de luces compuesto con 5 diodos led y 3 pulsadores, cada pulsador mostrará un ciclo distinto al ser pulsado.
 
-![](img/5.png)
+![](img/14.png)
 
 Al momento de subir nuestro circuito a Wyliodrin se nos mostrará una tabla de componentes con la información de cada pin de nuestra GPIO y el elemento que tiene conectado  en caso de haber un error no se mostrará la tabla y no funcionara nuestra simulación.
 
@@ -107,7 +107,7 @@ Según el diagrama mostrado anteriormente solo se usaban diodos y pulsadores con
  - 3 Resistencias de 4.7k
  ## 7.Mapa de Variables
  **Juegos de luces
- ![](img/6.png)
+ ![](img/15.png)
 
 ## 8.Explicacion de codigo fuente
  ```
@@ -246,8 +246,18 @@ Al ser una simulación en línea no es necesario la implementación de ningún s
 
 ## 10.Aportacion
 ## 11.Conclusiones
+Una vez hemos concluido el proyecto, podemos establecer que se tiene claro el concepto de entrada y salida de datos ya que hemos realizado el proceso por completo, el cual funciona con éxito siendo de gran utilidad si se quisiera explicar de manera sencilla y clara los conceptos de entrada y salida mediante ejemplos.
+
+También se ha comprendido y se ha sacado provecho a la herramienta Wyliodrin en la cual pudimos simular y ejecutar un circuito funcional con ayuda de conocimientos básicos de programación.
+
 ## 12.Recomendaciones
+ - Al momento de realizar nuestro esquema tomar en cuenta que si no aparece un cuadro de conexión este no va funcionar y debemos revisar cada componente ya que nuestro simulador no acepta ciertos componentes electrónicos.
+ - El lenguaje predeterminado para el simulador de raspberry es Node.JS por lo que solo debemos trabajar con este lenguaje.
+
 ## 13.Cronograma
+
+ ![](img/16.png)
+
 ## 14.Bibliografia
 Lopez, F., Torres, F. J., Ramirez, V. A., Nunez, D. A., Corona, R., & Lopez, A. R. (2019). Raspberry pi for implementation of web technology in an automation process. 2019 IEEE International Autumn Meeting on Power, Electronics and Computing, ROPEC 2019, (Ropec), 2–7. https://doi.org/10.1109/ROPEC48299.2019.9057040
 
@@ -255,8 +265,101 @@ Vochescu, A., Goran, S., Culic, I., & Radovici, A. (2017). Open source platform 
 
 Yamanoor, Narasimha Saii, and Srihari Yamanoor. “High Quality, Low Cost Education with the Raspberry Pi.” 2017 IEEE Global Humanitarian Technology Conference (GHTC), 2017, doi:10.1109/ghtc.2017.8239274.
 
+## 15.Anexos
+### Creación de Juego de luces mediante Wyliodrin
+Accedemos a la página web https://wyliodrin.studio/ y seleccionamos el uso de Wyliodrin en nuestro buscador
 
+![](img/17.png)
 
+Se nos presentará un ventana de trabajo como la siguiente:
 
+![](img/18.png)
 
+Contaremos con las siguientes funciones y características:
+Selección de idioma, Gestor de archivos, Menú, Conexión (Para conexión de dispositivos externos), Cerrar, Ampliar, Minimizar
 
+![](img/19.png)
+
+Aplicación (Edicion de codigo), Tablero de control, Block de notas, Consola
+
+![](img/20.png)
+
+Para trabajar con raspberry debemos conectar uno a nuestro panel de trabajo de Wyliodrin, mediante conectar.
+Se nos mostrará la siguiente ventana para seleccionar un dispositivo y seleccionamos Raspberry
+
+![](img/21.png)
+
+Se nos mostrará una nueva sección destinada a nuestra simulación de raspberry.
+
+![](img/22.png)
+
+En esta sección se nos mostrará un entorno donde tenemos circuitos y cuadros de conexión 
+
+![](img/23.png)
+
+En la parte lateral izquierda se mostrará un cuadro con ejemplos prediseñados los cuales podemos usar o con la opción de subir los nuestros.
+
+![](img/24.png)
+
+Para nuestro caso usaremos un diseño propio el cual lo realizaremos en el software Fritzing.
+Podemos realizar el Circuito en cualquier creador de diagramas siempre y cuando se permita exportar nuestro trabajo en un archivo XML y SVG, caso contrario no podremos simularlo en Wyliodrin
+
+Fritzing es una plataforma portable la cual nos permite el diseño de Circuitos y placas electrónicas mediante esquemas y diagramas.
+
+![](img/25.png)
+
+Para comenzar nuestro diseño debemos crear un nuevo proyecto en Fritzing.
+
+![](img/26.png)
+
+Para diseñar el circuito contaremos con diferentes pestañas de diseño, comenzaremos a trabajar por la pestaña “Esquemático”
+
+![](img/27.png)
+
+En la parte derecha se nos muestran todos los componentes disponibles para trabajar desde botones hasta microcontroladores.
+
+![](img/28.png)
+
+Para nuestro caso usaremos botones, diodos y un Raspberry pi.
+
+![](img/29.png)
+
+Debemos conectar todos los elementos de tal forma que formemos un circuito lógico dependiendo de nuestras necesidades.
+Para nuestro caso este será nuestro circuito.
+
+![](img/30.png)
+
+Una vez realizado el circuito debemos conectar los componentes en la pestaña protoboard. Estos ya estarán previamente conectados según el circuito Esquemático lo único que debemos hacer es conectarlos de manera visual y configurar colores de conexión.
+
+![](img/31.png)
+
+Una vez hechos los diseños funcionales y visuales, procedemos a exportar el circuito en formato XML y SVG, esto lo podemos hacer mediante la pestaña del menú archivo.
+
+![](img/32.png)
+
+Para subir nuestro diseño a Wyliodrin debemos seleccionar load schema en el menú izquierdo de nuestra pestaña de raspberry.
+
+![](img/33.png)
+
+Se nos mostrará el siguiente cuadro donde podremos subir nuestros archivos XML y SVG.
+
+![](img/34.png)
+
+En caso de no contar con errores al momento de subir los esquemas se mostrará tanto el esquema como un cuadro de con los pines de conexión de elementos al raspberry.
+
+![](img/35.png)
+
+NOTA: Debemos saber que Wyliodrin no es compatible con varios elementos como lo son resistencias, varios actuadores, etc. Esto nos limitará en nuestra simulación ya que reconoce pocos elementos como lo son leds, pulsadores, LCD. Pero su conexión debe ser de manera directa para evitarnos fallas en la simulación aunque en la implementación real estos podrían generar sobrevoltajes o fallas en caso de conectarlos directamente. 
+
+Creamos un proyecto en formato Node.JS donde cargaremos nuestro código, esto lo hacemos mediante el gestor de archivos de Wyliodrin.
+
+![](img/36.png)
+
+Es importante trabajar con Node.JS ya que es el único lenguaje que reconoce el simulador.
+En la pestaña aplicación deberemos subir nuestro código para simular en raspberry.
+
+![](img/37.png)
+
+Para simular damos play en la esquina superior derecha y comprobamos su funcionamiento.
+
+![](img/38.png)
