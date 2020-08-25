@@ -2,7 +2,7 @@
 ## 1.Planteamiento del Problema
 Realizar una investigacion de I/O de datos para raspberry pi ademas del uso de wyliodrin para esta misma investigacion 
 ## 2.Objetivos:
-General
+### General
  - Analizar la entrada y salida de datos de Raspberry Pi a través de la plataforma Wyliodrin
 ### Específicos
  - Aplicar conceptos de programación mediante la creación de un programa funcional que permita la entrada y salida de datos en una Raspberry pi
