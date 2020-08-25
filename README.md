@@ -1,7 +1,13 @@
-# Entrada y salida de datos con Wyliodrin  para Raspberry Pi.
+# Entrada y salida de datos con Wyliodrin para Raspberry Pi.
 ## 1.Planteamiento del Problema
 
 ## 2.Objetivos:
+General
+ - Analizar la entrada y salida de datos de Raspberry Pi a través de la plataforma Wyliodrin
+### Específicos
+ - Aplicar conceptos de programación mediante la creación de un programa funcional que permita la entrada y salida de datos en una Raspberry pi
+ - Implementar un la simulación de un circuito funcional con entrada y salida de datos mediante la plataforma Wyliodrin
+ - Comprender conceptos de entrada y de salida de datos.
 
 ## 3.Estado del Arte
 ![](img/1.png)
@@ -15,6 +21,68 @@ Las 3 investigaciones analizadas anteriormente cuenta con su aportación propia 
  - Raspberry nos permite adquirir conocimientos de computación y programación a muy bajo costo al ser una plataforma muy asequible.
  
 ## 4.Marco Teórico
+### ¿Que es la entrada y salida de datos?
+El ordenador (en este caso la Raspberry, que es una serie de ordenadores) necesita dispositivos que extraigan datos del exterior y los meta dentro de él para poder operar con ellos. Estos componentes se conocen como elementos de entrada de datos.
+En un algoritmo, los datos de entrada son los que la computadora va a procesar.
+Los datos de salida son datos que son obtenidos a partir de los datos de entrada. A los datos de salida se les considera más significativos que a los datos de entrada. Sin embargo, en un sentido más filosófico, a los datos de entrada se les considera la materia prima de los datos de salida, considerados estos como la verdadera información.
+En resumidas cuentas, la entrada de datos nos sirve como materia prima para lo que queremos representar posteriormente, y dicha representación es la salida la cual es información útil.
+
+![](img/4.png)
+
+### ¿Qué es Wyliodrin?
+
+![](img/5.png)
+
+Wyliodrin es un portal que entrega un entorno de programación visual, directamente sobre el navegador, este entorno permite la conexión y trabajo sobre las siguientes placas:
+ - Raspberry Pi
+ - Intel Galileo
+El procedimiento de enlace entre Wyliodrin y un Raspberry Pi es un poco más complicado de lo que se espera, (implica descargar una imagen de gran tamaño para la tarjeta SD, y luego un archivo adicional), pero una vez que está hecho, Wyliodrin habilita al usuario a programar diferentes funciones, que pueden ser tan sencillas como conectarse a una estación de radio e ingresar a redes sociales, o mucho más avanzadas, como asignar órdenes a un robot. Pero en este caso específico se lo usará para realizar cosas más simples, como son ejemplos de entrada y salida de datos.
+Para quienes gusten o dominen la programación tienen la chance de dejar a un lado todo el aspecto visual, y programar en C, Java y PHP con Wyliodrin, pero si una sola línea de código resulta aterradora, el “estilo Scratch” será mucho más sencillo de asimilar entre los principiantes. Sin embargo hay que tomar en cuenta que solo podremos simular con Java, para ser mas precisos con jode js. Wyliodrin concede la conexión de un sólo dispositivo y la creación de tres proyectos en sus cuentas gratuitas, y quien necesite más recursos podrá acceder a planes de suscripción que comienzan por debajo de los cuatro dólares mensuales.
+**Ventajas**
+Esta herramienta tiene características particulares que representan una ventaja para el usuario, y estas son:
+ - Permite la programación y el control de dispositivos embebidos directamente desde un navegador
+ - El usuario puede escribir, almacenar y ejecutar sus programas. El apartado del almacenamiento es importante ya que no todas las herramientas de este tipo permiten esto.
+ - Se puede modificar y ver los parámetros de la placa en tiempo real, sin importar dónde se encuentra la placa
+ - Con Wyliodrin programar no es un problema. Puedes programar tus placas usando su sistema de programación visual. Arrastra y suelta los bloques y Wyliodrin escribirá el código por tí.
+ - Durante la programación de dispositivos embebidos por lo general tienen que estar conectados al ordenador. Con Wyliodrin, el dispositivo debe estar conectado sólo a la Internet a través de un cable o WiFi. De esta manera, puedes construir coches o robots que pueden moverse a tu alrededor mientras que estás programando.
+### Entorno de Wyliodrin
+Esta herramienta nos ofrece varios apartados para poder llevar a cabo nuestro proyecto, estos apartados se integran dentro de su entorno de trabajo, el cual a continuación va a ser explicado a detalle:
+ - **Aplicación:** Es la pestaña que nos permite escrbir el código fuente acorde al lenguaje de programación que hayamos elegido, también nos puede mostrar el código que se genera en segundo plano si es que programamos de manera visual.
+ 
+ ![](img/6.png)
+ 
+ - **Tablero de control:**  En esta pestaña podemos añadir unidades de salida a manera de representación visual que complementen nuestro proyecto. Este apartado tiene funciones parecidas a los nodos que encontramos en la librería dashboard de node-red.
+ 
+ ![](img/7.png)
+ 
+ - **Block de Notas:** en esta pestaña podemos añadir comentarios importantes, aunque se lo puede realizar en el código como tal, este apartado nos permite organizar nuestras notas de mejor manera.
+ 
+ ![](img/8.png)
+ 
+  - **Shell:** Esta pestaña nos indica el estado de la placa en caso de que la tengamos conectada de manera física, si no se la tiene conectada nos presentara lo siguiente que es totalmente normal y no es ningún impedimento para continuar con nuestro proyecto.
+ 
+ [](img/9.png)
+ 
+ - **Placa:** En esta pestaña podremos ver lo que sucede en nuestra placa conectada o en este caso en particular podremos simular sobre una Raspberry Pi, en la cual podremos presenciar nuestros resultados.
+ 
+ [](img/10.png)
+ 
+ - **Herramientas** En el siguiente apartado se explicara mediante una imagen lo que estas opciones que nos brinda la herramienta nos permite hacer.
+ 
+ [](img/11.png)
+
+Dentro del menú de este último apartado podemos encontrar una librería que nos va a servir de gran ayuda, la cual se encuentra localizada y explicada en la siguiente ubicación:
+
+[](img/13.png)
+
+Libreria onoff GPIO:
+**crear (pin, estado) ->** crea un objeto desde el que puede controlar los pines GPIO en la RaspberryPi. El parámetro de estado es una cadena e indica el tipo de entrada / salida del pin
+**readSync () ->** devuelve el valor leído por el pin 1/0
+**writeSync (valor) ->** envía en el pin GPIO el valor seleccionado 1/0
+**direction () ->** devuelve el estado del pin
+**setDirection (estado) ->** cambiar el estado del pin
+**activeLow () ->** devuelve el estado de la propiedad activeLow del pin
+**setActiveLow (valor) ->** cambiar la propiedad activeLow en el pin
 ## 5.Diagramas
 **Juego de luces**
 
@@ -37,7 +105,155 @@ Según el diagrama mostrado anteriormente solo se usaban diodos y pulsadores con
  - 5 Resistencias de 220 ohm
  - 3 Botones
  - 3 Resistencias de 4.7k
+ ## 7.Mapa de Variables
+ **Juegos de luces
+ ![](img/6.png)
+
+## 8.Explicacion de codigo fuente
+ ```
+ var Gpio = require("onoff").Gpio;//iniciamos la libreria complatible con Wyliondrin
  
+//asignamos las variables a pines de nuestra gpio como salidas en este caso nuestros leds
+var led1 = new Gpio(2, "out");
+var led2 = new Gpio(3, "out");
+var led3 = new Gpio(4, "out");
+var led4 = new Gpio(17, "out");
+var led5 = new Gpio(27, "out");
+ 
+//asignamos las variables a pines de nuestra gpio como entradas en este caso nuestros interruptores
+var interruptor1 = new Gpio(14, "in");
+var interruptor2 = new Gpio(15,"in");
+var interruptor3 = new Gpio(18,"in");
+ 
+var tiempo=500;//variable para control de tiempo
+var estado;//Variable de estado
+ 
+//Mediante la funcion direction() leemos los pines seleccionados en nuestra GPIO para comprobar como han sido configurados
+//Almacenamos el estado de nuestros pines en la variable estado
+//Mediante una salida de consola informamos la configuracion de nuestros pines al usuario imprimiendo la variable estado
+ 
+console.log("***Juegos de Luces***");
+console.log("La configuracion de puertos es la sigiente");
+estado=led1.direction();
+console.log("Gpio2 configurado como: ");
+console.log(estado);
+estado=led2.direction();
+console.log("Gpio3 configurado como: ");
+console.log(estado);
+estado=led3.direction();
+console.log("Gpio4 configurado como: ");
+console.log(estado);
+estado=led4.direction();
+console.log("Gpio17 configurado como: ");
+console.log(estado);
+estado=led5.direction();
+console.log("Gpio27 configurado como: ");
+console.log(estado);
+estado=interruptor1.direction();
+console.log("Gpio14 configurado como: ");
+console.log(estado);
+estado=interruptor2.direction();
+console.log("Gpio15 configurado como: ");
+console.log(estado);
+estado=interruptor3.direction();
+console.log("Gpio18 configurado como: ");
+console.log(estado);
+ 
+//Iniciames nuestro bucle infinito
+ 
+while(1){
+//Para la lectura de pines usaremos la funcion readsync() y mediante un if definimos que boton pulsó el usuario
+//Contaremos con distintos casos para juegos de luces 
+//La funcion encargada de enviar señales a cada salida es writeSync()
+//La variable tiempo controlara el tiempo de ejecucion
+//Mediante un bucle for repetiremos 5 veces cada juego de luces
+ 
+//Primer juego de luces
+if(interruptor1.readSync()===1){
+console.log("Juego de luces 1");
+for(var i=1;i<=5;i++){
+led1.writeSync(1);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+ 
+led1.writeSync(0);led2.writeSync(1);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+ 
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(1);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+ 
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(0);led4.writeSync(1);led5.writeSync(0);
+sleep(tiempo);
+ 
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(1);
+sleep(tiempo);
+ 
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(0);led4.writeSync(1);led5.writeSync(0);
+sleep(tiempo);
+ 
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(1);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+ 
+led1.writeSync(0);led2.writeSync(1);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+ 
+led1.writeSync(1);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+ 
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+}
+ 
+//Segundo juego de luces
+}else if(interruptor2.readSync()===1){
+console.log("Juego de luces 2");
+ 
+for(var i=1;i<=5;i++){
+led1.writeSync(1);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(1);
+sleep(tiempo);
+ 
+led1.writeSync(0);led2.writeSync(1);led3.writeSync(0);led4.writeSync(1);led5.writeSync(0);
+sleep(tiempo);
+ 
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(1);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+ 
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+}
+ 
+//Tercer juego de luces
+}else if(interruptor3.readSync()===1){
+console.log("Juego de luces 3");
+ 
+for(var i=1;i<=5;i++){
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(1);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+ 
+led1.writeSync(0);led2.writeSync(1);led3.writeSync(0);led4.writeSync(1);led5.writeSync(0);
+sleep(tiempo);
+ 
+led1.writeSync(1);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(1);
+sleep(tiempo);
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+}
+}
+}
+```
+## 9.Descripción de Prerrequisitos y configuración.
+**Juego de luces**
+Al ser una simulación en línea no es necesario la implementación de ningún software adicional, únicamente de contar con acceso a internet, en caso de realizar un diseño propio se debe crear primero un esquema en fritzing, el cual es un software portable para el diseño de circuitos electrónicos.
+
+## 10.Aportacion
+## 11.Conclusiones
+## 12.Recomendaciones
+## 13.Cronograma
+## 14.Bibliografia
+Lopez, F., Torres, F. J., Ramirez, V. A., Nunez, D. A., Corona, R., & Lopez, A. R. (2019). Raspberry pi for implementation of web technology in an automation process. 2019 IEEE International Autumn Meeting on Power, Electronics and Computing, ROPEC 2019, (Ropec), 2–7. https://doi.org/10.1109/ROPEC48299.2019.9057040
+
+Vochescu, A., Goran, S., Culic, I., & Radovici, A. (2017). Open source platform for sharing Internet of Things educational materials. 16th Networking in Education and Research RoEduNet International Conference, RoEduNet 2017 - Proceedings. https://doi.org/10.1109/ROEDUNET.2017.8123747
+
+Yamanoor, Narasimha Saii, and Srihari Yamanoor. “High Quality, Low Cost Education with the Raspberry Pi.” 2017 IEEE Global Humanitarian Technology Conference (GHTC), 2017, doi:10.1109/ghtc.2017.8239274.
 
 
 
