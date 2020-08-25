@@ -1,0 +1,129 @@
+
+var Gpio = require("onoff").Gpio;//iniciamos la libreria complatible con Wyliondrin
+
+//asignamos las variables a pines de nuestra gpio como salidas en este caso nuestros leds
+var led1 = new Gpio(2, "out");
+var led2 = new Gpio(3, "out");
+var led3 = new Gpio(4, "out");
+var led4 = new Gpio(17, "out");
+var led5 = new Gpio(27, "out");
+
+//asignamos las variables a pines de nuestra gpio como entradas en este caso nuestros interruptores
+var interruptor1 = new Gpio(14, "in");
+var interruptor2 = new Gpio(15,"in");
+var interruptor3 = new Gpio(18,"in");
+
+var tiempo=500;//variable para control de tiempo
+var estado;//Variable de estado
+
+//Mediante la funcion direction() leemos los pines seleccionados en nuestra GPIO para comprobar como han sido configurados
+//Almacenamos el estado de nuestros pines en la variable estado
+//Mediante una salida de consola informamos la configuracion de nuestros pines al usuario imprimiendo la variable estado
+
+console.log("***Juegos de Luces***");
+console.log("La configuracion de puertos es la sigiente");
+estado=led1.direction();
+console.log("Gpio2 configurado como: ");
+console.log(estado);
+estado=led2.direction();
+console.log("Gpio3 configurado como: ");
+console.log(estado);
+estado=led3.direction();
+console.log("Gpio4 configurado como: ");
+console.log(estado);
+estado=led4.direction();
+console.log("Gpio17 configurado como: ");
+console.log(estado);
+estado=led5.direction();
+console.log("Gpio27 configurado como: ");
+console.log(estado);
+estado=interruptor1.direction();
+console.log("Gpio14 configurado como: ");
+console.log(estado);
+estado=interruptor2.direction();
+console.log("Gpio15 configurado como: ");
+console.log(estado);
+estado=interruptor3.direction();
+console.log("Gpio18 configurado como: ");
+console.log(estado);
+
+//Iniciames nuestro bucle infinito
+
+while(1){
+//Para la lectura de pines usaremos la funcion readsync() y mediante un if definimos que boton pulsó el usuario
+//Contaremos con distintos casos para juegos de luces 
+//La funcion encargada de enviar señales a cada salida es writeSync()
+//La variable tiempo controlara el tiempo de ejecucion
+//Mediante un bucle for repetiremos 5 veces cada juego de luces
+
+//Primer juego de luces
+if(interruptor1.readSync()===1){
+console.log("Juego de luces 1");
+for(var i=1;i<=5;i++){
+led1.writeSync(1);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+
+led1.writeSync(0);led2.writeSync(1);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(1);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(0);led4.writeSync(1);led5.writeSync(0);
+sleep(tiempo);
+
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(1);
+sleep(tiempo);
+
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(0);led4.writeSync(1);led5.writeSync(0);
+sleep(tiempo);
+
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(1);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+
+led1.writeSync(0);led2.writeSync(1);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+
+led1.writeSync(1);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+}
+
+//Segundo juego de luces
+}else if(interruptor2.readSync()===1){
+console.log("Juego de luces 2");
+
+for(var i=1;i<=5;i++){
+led1.writeSync(1);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(1);
+sleep(tiempo);
+
+led1.writeSync(0);led2.writeSync(1);led3.writeSync(0);led4.writeSync(1);led5.writeSync(0);
+sleep(tiempo);
+
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(1);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+}
+
+//Tercer juego de luces
+}else if(interruptor3.readSync()===1){
+console.log("Juego de luces 3");
+
+for(var i=1;i<=5;i++){
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(1);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+
+led1.writeSync(0);led2.writeSync(1);led3.writeSync(0);led4.writeSync(1);led5.writeSync(0);
+sleep(tiempo);
+
+led1.writeSync(1);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(1);
+sleep(tiempo);
+led1.writeSync(0);led2.writeSync(0);led3.writeSync(0);led4.writeSync(0);led5.writeSync(0);
+sleep(tiempo);
+}
+}
+}
