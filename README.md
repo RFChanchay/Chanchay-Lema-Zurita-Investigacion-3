@@ -1,6 +1,6 @@
 # Entrada y salida de datos con Wyliodrin para Raspberry Pi.
 ## 1.Planteamiento del Problema
-
+Realizar una investigacion de I/O de datos para raspberry pi ademas del uso de wyliodrin para esta misma investigacion 
 ## 2.Objetivos:
 General
  - Analizar la entrada y salida de datos de Raspberry Pi a través de la plataforma Wyliodrin
